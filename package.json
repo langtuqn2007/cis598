@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/langtuqn2007/cis598#readme",
   "dependencies": {
-    "express": "^4.14.0",
-    "jade": "^1.11.0",
-    "request": "^2.79.0"
+    "express": "3.4.0",
+    "jade": "*",
+    "request": "~2.27.0"
   }
 }
