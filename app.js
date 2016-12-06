@@ -35,7 +35,7 @@ app.use(stormpath.init(app, {
 }));
 
 // Work with Stormpath API
-app.use('/profile', stormpath.loginRequired, require('./profile')());
+app.use('/profile', stormpath.loginRequired, require('./routes/profile')());
 app.on('stormpath.ready', function () {
     console.log('Stormpath Ready');
 });
@@ -52,6 +52,13 @@ app.get('/searching', function(req, res){
 	requests(url,function(data){
 		res.send(data);
 	});
+});
+
+// 3rd Route, Render Home Page
+app.get('/account', stormpath.getUser, function (req, res) {
+    res.render('account', {
+        title: 'Welcome to Home Page'
+    });
 });
 
 // Ajax function to return the results for Steam player summary

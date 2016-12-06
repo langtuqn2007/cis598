@@ -1,0 +1,32 @@
+html
+	head
+		title=title
+		// Core of bootstrap
+		link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+	body
+		div.container
+			div.jumbotron.text-center
+				h1 Hello!
+				if user
+					p Welcome, #{user.fullName}
+					div.row
+						div.col-md-2
+						div.col-md-2
+						div.col-md-2
+							p
+								a.btn.btn-success(href="profile") Edit my profile
+						div.col-md-2
+							form(action='/logout', method='POST')
+								button.btn.btn-danger(type="submit") Logout
+					div.row          
+						p Or?
+						p
+							a.btn.btn-default(href="/") Salvage a Steam account here
+				else
+					p Welcome to SteamSalvage, ready to get started?
+					p
+						a.btn.btn-primary(href="/login") Login now
+					p
+						span.small Don't have an account?
+						span &nbsp;
+						a.small(href="/register") Register now
