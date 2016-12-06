@@ -1,0 +1,33 @@
+{
+  "name": "steam_salvage",
+  "version": "0.0.1",
+  "description": "A small web-app inspired by Steamdb",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/langtuqn2007/cis598.git"
+  },
+  "keywords": [
+    "steamapi",
+    "nodejs",
+    "jade",
+    "ajax",
+    "stormpath",
+    "express",
+    "json"
+  ],
+  "author": "Phong Le",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/langtuqn2007/cis598/issues"
+  },
+  "homepage": "https://github.com/langtuqn2007/cis598#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "request": "^2.79.0"
+  }
+}
