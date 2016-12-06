@@ -10,31 +10,33 @@ Steam Salvage is a small web-app inspired by SteamDB. To be specific, a user can
   
 ### Tech
 
-Dillinger uses a number of open source projects to work properly:
+Steam Salvage uses a number of open source projects to work properly:
 
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-* [jQuery] - duh
+* [node.js] - Evented I/O for the backend
+* [Express] - Node.js network app framework
+* [express-stormpath] - extension for Express.js that makes it simple to add user authentication to application
+* [body-parser] - Node.js body parsing middleware
+* [cookie-parser] - Parse Cookie header and populate req.cookies with an object keyed by the cookie names
+* [csurf] - Node.js CSRF protection middleware
+* [forms] - An easy way to create, parse and validate forms in node.js
 
-And Steam Salvage is an open source itself
+And Steam Salvage is an open source itself. If someone can put it in good use, that will be an honor for me.
 
 ### Installation & Running
 
 Steam Salvage requires [Node.js](https://nodejs.org/) to run.
 
-Install the dependencies, and start the app:
+Download/clone the repo. Then use a terminal and browse to the folder just installed to install the dependencies and start the app by doing the following:
 
 ```sh
-$ cd cis598
 $ npm install
 $ node app.js
 ```
-Then open a web browser and type:
+Then open a web browser and enter this address:
 ```sh
 localhost:3000
 ```
 ### Todos
- - Implement identity management
  - Keep improving the search page
  
 License
@@ -47,3 +49,8 @@ MIT
    [node.js]: <http://nodejs.org>
    [jQuery]: <http://jquery.com>
    [Express]: <http://expressjs.com/>
+   [body-parser]: <https://github.com/expressjs/body-parser>
+   [cookie-parser]: <https://github.com/expressjs/cookie-parser>
+   [csurf]: <https://github.com/expressjs/csurf>
+   [express-stormpath]: <https://github.com/stormpath/express-stormpath>
+   [forms]: <https://github.com/caolan/forms>
