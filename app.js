@@ -7,23 +7,38 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var request = require('request');
+var stormpath = require('express-stormpath');
 var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.bodyParser());
-app.use(express.methodOverride());
-app.use(app.router);
+
+// Serve statics files
+app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-}
+// Initialize the API keys to get the stormpath working
+app.use(stormpath.init(app, {
+    expand: {
+        customData: true
+    },
+    client: {
+        apiKey: {
+            file: './apikey.properties'
+        }
+    },
+    application: {
+        href: 'https://api.stormpath.com/v1/applications/28CLMYbXhildtw92iFMsiH',
+    }
+}));
+
+// Work with Stormpath API
+app.use('/profile', stormpath.loginRequired, require('./profile')());
+app.on('stormpath.ready', function () {
+    console.log('Stormpath Ready');
+});
 
 // first route
 app.get('/', function(req, res) {res.render('index')});
@@ -39,6 +54,7 @@ app.get('/searching', function(req, res){
 	});
 });
 
+// Ajax function to return the results for Steam player summary
 function requests(url, callback) {
 	// request module is used to process the url and return the results in JSON format
 	request(url, function(err, resp, body) {
