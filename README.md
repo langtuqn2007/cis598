@@ -14,11 +14,14 @@ Steam Salvage uses a number of open source projects to work properly:
 
 * [node.js] - Evented I/O for the backend
 * [Express] - Node.js network app framework
-* [express-stormpath] - extension for Express.js that makes it simple to add user authentication to application
+* [express-stormpath] - Extension for Express.js that makes it simple to add user authentication to application
 * [body-parser] - Node.js body parsing middleware
 * [cookie-parser] - Parse Cookie header and populate req.cookies with an object keyed by the cookie names
 * [csurf] - Node.js CSRF protection middleware
 * [forms] - An easy way to create, parse and validate forms in node.js
+* [pug] - Template engine
+* [request] - Simplified HTTP client
+* [xtend] - Extend an object by appending all of the properties from each object in a list
 
 And Steam Salvage is an open source itself. If someone can put it in good use, that will be an honor for me.
 
@@ -54,3 +57,6 @@ MIT
    [csurf]: <https://github.com/expressjs/csurf>
    [express-stormpath]: <https://github.com/stormpath/express-stormpath>
    [forms]: <https://github.com/caolan/forms>
+   [pug]: <https://github.com/pugjs/pug>
+   [request]: <https://github.com/request/request>
+   [xtend]: <https://github.com/Raynos/xtend>
