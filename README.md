@@ -7,6 +7,7 @@ Steam Salvage is a small web-app inspired by SteamDB. To be specific, a user can
   - Discover what kind of games that user tend to play the most
   - Calculate the current value of that Steam account's library
   - And more...
+  
 ### Tech
 
 Dillinger uses a number of open source projects to work properly:
