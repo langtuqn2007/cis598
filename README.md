@@ -23,11 +23,11 @@ Steam Salvage uses a number of open source projects to work properly:
 * [request] - Simplified HTTP client
 * [xtend] - Extend an object by appending all of the properties from each object in a list
 
-And Steam Salvage is an open source itself. If someone can put it in good use, that will be an honor for me.
+And Steam Salvage fetches data mainly from [SteamAPI](https://developer.valvesoftware.com/wiki/Steam_Web_API).
 
 ### Installation & Running
 
-Steam Salvage requires [Node.js](https://nodejs.org/) to run.
+**Steam Salvage requires [Node.js](https://nodejs.org/) to run.**
 
 Download/clone the repo. Then use a terminal and browse to the folder just installed to install the dependencies and start the app by doing the following:
 
