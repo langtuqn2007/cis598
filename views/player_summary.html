@@ -1,10 +1,28 @@
 <script id="search-results" type="text/x-handlebars-template">
-	{{#each resultsArray}}
-	<!--
-	 	<li><a href={{about}}>{{title}}</a><br>{{desc}}></li> -->
-		<a href='{{profileurl}}' target="_blank"><img src='{{avatarfull}}' /></a>
-		<li>{{personaname}} | {{realname}}</li>
-	{{/each}}
+	<div class="accordion">
+		<div id="tab-1"><a href="#tab-1" class="tab">Player Brief Info</a>
+			<div class="content">
+				<br>
+				{{#each resultsArray}}
+					Click this picture to go into the Steam profile--------><a id="ava" href='{{profileurl}}' target="_blank"><img id="image_border" src='{{avatarfull}}' /></a>
+					<p id="first_item">Persona Name: <strong id="first_item2">{{personaname}}</strong></p>
+					<p id="first_item">Real Name: <strong id="first_item3">{{realname}}</strong></p>
+				{{/each}}
+				<br>
+			</div>
+		</div>
+		<div id="tab-2"><a href="#tab-2" class="tab">Option Two</a>
+			<div class="content">
+				Content here
+			</div>
+		</div>
+		<div id="tab-3"><a href="#tab-3" class="tab">Option Three</a>
+			<div class="content">
+				Content here
+			</div>
+		</div>
+	</div>
+
 	<br>
 	</ul>
 </script>
