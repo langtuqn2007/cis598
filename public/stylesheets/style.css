@@ -110,6 +110,7 @@ a {
 .accordion div .content {
     display: none;
     margin: 5px 0;
+    flex: 1;
 }
 
 .accordion div:target .content {
@@ -176,7 +177,7 @@ a {
 }
 
 .accordion>div:target {
-    height: 500px;
+    height: 620px;
 }
 
 
@@ -191,11 +192,19 @@ a {
 }
 
 #first_item2 {
-    color: #f2f2f2; background: #ff4a4a; font-size: 36px; line-height: 65px; font-weight: 700; margin: 0 1px 2px; padding: 5px; font-family: 'Libre Baskerville', serif;
+    color: #f2f2f2; background: #DC143C; font-size: 36px; line-height: 65px; font-weight: 700; margin: 0 1px 2px; padding: 5px; font-family: 'Libre Baskerville', serif;
 }
 
 #first_item3 {
-    color: #f2f2f2; background: #6495ed; font-size: 36px; line-height: 65px; font-weight: 700; margin: 0 1px 2px; padding: 5px; font-family: 'Libre Baskerville', serif;
+    color: #f2f2f2; background: #6495ED; font-size: 36px; line-height: 65px; font-weight: 700; margin: 0 1px 2px; padding: 5px; font-family: 'Libre Baskerville', serif;
+}
+
+#first_item4 {
+    color: #f2f2f2; background: #228B22; font-size: 36px; line-height: 65px; font-weight: 700; margin: 0 1px 2px; padding: 5px; font-family: 'Libre Baskerville', serif;
+}
+
+#first_item5 {
+    color: #f2f2f2; background: #9370DB; font-size: 36px; line-height: 65px; font-weight: 700; margin: 0 1px 2px; padding: 5px; font-family: 'Libre Baskerville', serif;
 }
 
 #image_border {

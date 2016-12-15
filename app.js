@@ -45,24 +45,30 @@ app.get('/', function (req, res) {
 	res.render('index')
 });
 
-// second route
-app.get('/searching', function (req, res) {
-	// input value from search
-	var val = req.query.search;
-	var url = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=1CCFCAC9300684C6D1E6CD96F8F649B8&steamids=" + val;
-	requests(url, function (data) {
-		res.send(data);
+// 2nd Route, Render Home Page
+app.get('/account', stormpath.getUser, function (req, res) {
+	res.render('account', {
+		title: 'Welcome to Home Page'
 	});
 });
 
-// Ajax function to return the results for second route
-function requests(url, callback) {
+// 3rd route, for display result of player summary
+app.get('/player_summary', function (req, res) {
+	// input value from search
+	var val = req.query.search;
+	var url = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=1CCFCAC9300684C6D1E6CD96F8F649B8&steamids=" + val;
+	request_playersummary(url, function (data) {
+		res.send(data);
+	});
+});
+// Ajax function to return the results for third route
+function request_playersummary(url, callback) {
 	// request module is used to process the url and return the results in JSON format
 	request(url, function (err, resp, body) {
 		var resultsArray = [];
 		body = JSON.parse(body);
 
-		// logic used to print out player summaries
+		// logic used to traverse through and push out data for player summary
 		if (!body.response.players) {
 			players = "No player found. Try again.";
 			callback(players);
@@ -73,7 +79,9 @@ function requests(url, callback) {
 					profileurl: players[i]["profileurl"],
 					personaname: players[i]["personaname"],
 					avatarfull: players[i]["avatarfull"],
-					realname: players[i]["realname"]
+					realname: players[i]["realname"],
+					loccountrycode: players[i]["loccountrycode"],
+					locstatecode: players[i]["locstatecode"]
 				});
 			};
 		};
@@ -82,12 +90,39 @@ function requests(url, callback) {
 	});
 };
 
-// 3rd Route, Render Home Page
-app.get('/account', stormpath.getUser, function (req, res) {
-	res.render('account', {
-		title: 'Welcome to Home Page'
+// 4th route, for display result of game summary
+app.get('/game_summary', function (req, res) {
+	// input value from search
+	var val = req.query.search;
+	var url = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=1CCFCAC9300684C6D1E6CD96F8F649B8&steamid=" + val;
+	request_gamesummary(url, function (data) {
+		res.send(data);
 	});
 });
+// Ajax function to return the results for 4th route
+function request_gamesummary(url, callback) {
+	// request module is used to process the url and return the results in JSON format
+	request(url, function (err, resp, body) {
+		var resultsArray = [];
+		body = JSON.parse(body);
+
+		// logic used to traverse through and push out data for game summary
+		if (!body.response.games) {
+			games = "No player found. Try again.";
+			callback(games);
+		} else {
+			games = body.response.games;
+			for (var i = 0; i < games.length; i++) {
+				resultsArray.push({
+					appid: games[i]["appid"],
+					playtime_forever: games[i]["playtime_forever"]
+				});
+			};
+		};
+		// pass back the results to client side
+		callback(resultsArray);
+	});
+};
 
 // run server
 http.createServer(app).listen(app.get('port'), function () {
