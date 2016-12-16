@@ -48,7 +48,7 @@ a {
 /* background color, rounded corners and some shadows */
 
 .accordion {
-    width: 700px;
+    width: 1000px;
     padding: 1px 5px 5px 5px;
     background: #141517;
     -webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, .05);
@@ -177,7 +177,7 @@ a {
 }
 
 .accordion>div:target {
-    height: 620px;
+    height: 600px;
 }
 
 

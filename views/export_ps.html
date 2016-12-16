@@ -1,0 +1,9 @@
+<script id="export_ps" type="text/x-handlebars-template">
+	{{#each resultsArray}}
+		Click this picture to go into the Steam profile--------><a id="ava" href='{{profileurl}}' target="_blank"><img id="image_border" src='{{avatarfull}}' /></a>
+		<p id="first_item">Persona Name: <strong id="first_item2">{{personaname}}</strong></p>
+		<p id="first_item">Real Name: <strong id="first_item3">{{realname}}</strong></p>
+		<p id="first_item">Country: <strong id="first_item4">{{loccountrycode}}</strong></p>
+		<p id="first_item">State: <strong id="first_item5">{{locstatecode}}</strong></p>
+	{{/each}}				
+</script>

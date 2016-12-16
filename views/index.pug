@@ -3,10 +3,23 @@ extends layout
 block content
 	h1 Steam Salvage
 	input#search(type="search", placeholder="Insert a Steamid64 here and click enter")
-	.display_result
-		ul#results
-		include export_result.html
+	.forthelol
+		ul#forthelol
+	.accordion
+		#tab-1
+			a.tab(href='#tab-1') Player Summary Info
+			#display_ps.content
+				include export_ps.html
+		#tab-2
+			a.tab(href='#tab-2') Game Summary Info
+			#display_gs.content
+				include export_gs.html
+		#tab-3
+			a.tab(href='#tab-3') Option Three
+			.content
+			| Content here
 
+	// Reference Jquery, Handlebards, and custom javascripts
 	script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
 	script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js")
 	script(src="/javascripts/main.js")

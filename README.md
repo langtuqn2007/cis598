@@ -19,7 +19,8 @@ Steam Salvage uses a number of open source projects to work properly:
 * [cookie-parser] - Parse Cookie header and populate req.cookies with an object keyed by the cookie names
 * [csurf] - Node.js CSRF protection middleware
 * [forms] - An easy way to create, parse and validate forms in node.js
-* [pug] - Template engine
+* [pug] - Template engine for cleaner looking view 
+* [handlebars] - Logicless template language for more complex javascripts
 * [request] - Simplified HTTP client
 * [xtend] - Extend an object by appending all of the properties from each object in a list
 
@@ -60,3 +61,4 @@ MIT
    [pug]: <https://github.com/pugjs/pug>
    [request]: <https://github.com/request/request>
    [xtend]: <https://github.com/Raynos/xtend>
+   [handlebars]: <https://github.com/wycats/handlebars.js/>
