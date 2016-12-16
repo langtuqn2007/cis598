@@ -97,8 +97,9 @@ app.get('/game_summary', function (req, res) {
 	var url = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=1CCFCAC9300684C6D1E6CD96F8F649B8&steamid=" + val;
 	request_gamesummary(url, function (data) {
 		res.send(data);
-	});
+	}); 
 });
+
 // Ajax function to return the results for 4th route
 function request_gamesummary(url, callback) {
 	// request module is used to process the url and return the results in JSON format
