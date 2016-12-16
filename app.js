@@ -108,17 +108,20 @@ function request_gamesummary(url, callback) {
 		body = JSON.parse(body);
 
 		// logic used to traverse through and push out data for game summary
-		if (!body.response.games) {
-			games = "No player found. Try again.";
-			callback(games);
+		if (!body.response.game_count) {
+			game_count = "No player found. Try again.";
+			callback(game_count);
 		} else {
-			games = body.response.games;
-			for (var i = 0; i < games.length; i++) {
+			game_count = body.response.game_count;
+			/*
+			for (var i = 0; i < game_count.length; i++) {
 				resultsArray.push({
-					appid: games[i]["appid"],
-					playtime_forever: games[i]["playtime_forever"]
+					gamecount: game_count[i]["gamecount"]
 				});
-			};
+			}; */
+			resultsArray.push({
+				game_count: [game_count]
+			})
 		};
 		// pass back the results to client side
 		callback(resultsArray);
