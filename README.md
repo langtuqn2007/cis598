@@ -41,7 +41,8 @@ Then open a web browser and enter this address:
 localhost:3000
 ```
 ### Todos
- - Keep improving the search page
+ - Need to improve a lot on Ajax calls on search page
+ - Integrate the database with the recommending system
  
 License
 ----

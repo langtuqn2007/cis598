@@ -1,5 +1,9 @@
 <script id="export_gs" type="text/x-handlebars-template">
-	{{#each resultsArray}}
-        <p id="first_item">Total Games and DLC: <strong id="first_item2">{{game_count}}</strong></p>
+	{{#each resultsArray}}  
+		{{#if game_count}}
+			<p id="first_item">Total Games and DLC: <strong id="first_item2">{{game_count}}</strong></p>
+		{{else}}
+			<p id="first_item">Game_id: <strong id="first_item3">{{appid}}</strong> | Total time played: <strong id="first_item4">{{playtime_forever}} mins</strong></p>
+		{{/if}}	
 	{{/each}}				
 </script>

@@ -109,19 +109,26 @@ function request_gamesummary(url, callback) {
 
 		// logic used to traverse through and push out data for game summary
 		if (!body.response.game_count) {
-			game_count = "No player found. Try again.";
+			game_count = "No game count found. Try again.";
 			callback(game_count);
 		} else {
 			game_count = body.response.game_count;
-			/*
-			for (var i = 0; i < game_count.length; i++) {
-				resultsArray.push({
-					gamecount: game_count[i]["gamecount"]
-				});
-			}; */
 			resultsArray.push({
 				game_count: [game_count]
 			})
+		};
+		if (!body.response.games) {
+			games = "No game found. Try again.";
+			callback(games);
+		} else {
+			games = body.response.games;
+			for (var i = 0; i < games.length; i++) {
+				resultsArray.push({
+				appid: games[i]["appid"],
+				playtime_forever: games[i]["playtime_forever"]
+				});
+			};
+			
 		};
 		// pass back the results to client side
 		callback(resultsArray);

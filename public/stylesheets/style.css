@@ -177,7 +177,7 @@ a {
 }
 
 .accordion>div:target {
-    height: 600px;
+    height: auto;
 }
 
 
